@@ -68,17 +68,20 @@ body {
     background-color: var(--Transparent-white);
     display: grid;
     place-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--Transparent-white);
 }
 
-.card {
+.container {
+    max-width: 900px;
+}
+
+.wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: var(--Very-light-gray);
     border-radius: .5rem;
     overflow: hidden;
-    max-width: 800px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -125,6 +128,8 @@ button {
     border: none;
     padding: .5rem 0rem;
     max-width: 125px;
+    border: 2px solid var(--Very-light-gray);
+    background-color: var(--Very-light-gray);
 }
 
 .cta-sedans {
@@ -139,14 +144,15 @@ button {
     color: var(--Very-dark-cyan);
 }
 
-@media (max-width: 800px) {
-    body {
-        min-height: 125vh;
-    }
-    
-    .card {
-        grid-template-columns: none; /* Reset columns */
-        grid-template-rows: repeat(3, 1fr); /* Vertical layout for small screens */
-        margin: 20px;
+button:hover {
+    color: white;
+    background-color: transparent;
+    transition: all .15s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* Reset columns */
+        margin: 1rem;
         }
     }
